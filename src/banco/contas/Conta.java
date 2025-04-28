@@ -1,7 +1,9 @@
 package banco.contas;
 
 import banco.clientes.Cliente;
+import lombok.Getter;
 
+@Getter
 public abstract class Conta implements IConta {
 
     private static final int AGENCIA = 1;
@@ -16,18 +18,6 @@ public abstract class Conta implements IConta {
         this.agencia = Conta.AGENCIA;
         this.conta = Conta.AUTO_INCREMENT++;
         this.cliente = cliente;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getConta() {
-        return conta;
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     public void sacar(double valor) {

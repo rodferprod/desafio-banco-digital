@@ -9,16 +9,17 @@ public class App {
 
         Banco banco = new Banco();
 
-        Cliente cliente = new Cliente("Rodrigo");
+        Cliente cliente1 = new Cliente("Rodrigo");
+        Cliente cliente2 = new Cliente("Ricardo");
 
-        Conta contaCorrente = new ContaCorrente(cliente);
-        Conta contaPoupanca = new ContaPoupanca(cliente);
+        Conta contaCorrente = new ContaCorrente(cliente1);
+        Conta contaPoupanca = new ContaPoupanca(cliente2);
 
         banco.adicionarConta(contaCorrente);
         banco.adicionarConta(contaPoupanca);
 
         contaCorrente.depositar(140.0);
-        contaCorrente.transferir(70.0, contaPoupanca);
+        contaCorrente.transferir(80.0, contaPoupanca);
 
         contaCorrente.exibirExtrato();
         contaPoupanca.exibirExtrato();
